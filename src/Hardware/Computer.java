@@ -1,5 +1,7 @@
 package Hardware;
 
+import Software.Program;
+
 public class Computer {
 	private Memory memory;
 	private Program program;

@@ -1,4 +1,4 @@
-package Software;
+package Hardware;
 
 public class LongWord {
 }

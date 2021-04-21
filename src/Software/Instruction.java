@@ -1,4 +1,9 @@
 package Software;
 
-public class Instruction {
+import Hardware.Memory;
+
+public interface Instruction {
+
+    void execute(Memory memory);
+
 }

@@ -13,7 +13,7 @@ public class Program extends ArrayList<Instruction> {
 			Instruction instruction = get((int) computer.getPc());
 
 			try {
-				Thread.sleep(800);
+				//Thread.sleep(800);
 			} catch (Exception e) {}
 
 			System.out.printf("[%s] - %s  ", computer.getPc(), instruction);

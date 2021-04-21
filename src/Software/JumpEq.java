@@ -9,10 +9,10 @@ public class JumpEq implements Instruction {
     private int eq;
     private Operand addr, comparer;
 
-    public JumpEq(int eq, Operand addr, Operand comparer) {
+    public JumpEq(int eq, Operand comparer, Operand addr) {
         this.eq = eq;
-        this.addr = addr;
         this.comparer = comparer;
+        this.addr = addr;
     }
 
     @Override

@@ -9,7 +9,8 @@ public abstract class Memory {
     }
 
     public long read(long addr) {
-        return mem[(int) addr].value();
+        Operand value = mem[(int) addr];
+        return value == null ? 0 : value.value();
     }
 
     public void write(long addr, long value) {

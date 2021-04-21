@@ -1,4 +1,15 @@
 package Software;
 
-public class Add {
+import Hardware.Operand;
+
+public class Add extends Arithmetic {
+
+    public Add(Operand op1, Operand op2, Operand addr) {
+        super(op1, op2, addr);
+    }
+
+    @Override
+    protected int compute(int op1, int op2) {
+        return op1 + op2;
+    }
 }

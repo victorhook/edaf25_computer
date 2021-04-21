@@ -6,14 +6,14 @@ import Hardware.Operand;
 
 public class Jump implements Instruction {
 
-    private Operand addr;
+    private int addr;
 
-    public Jump(Operand addr) {
+    public Jump(int addr) {
         this.addr = addr;
     }
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        computer.setPc(addr.value());
+        computer.setPc(addr);
     }
 }

@@ -22,4 +22,11 @@ public class Computer {
 			program.executeLine(pc);
 		}
 	}
+	public Integer getPc() {
+        return pc;
+
+    }
+    public Integer setPc(int pc) {
+        return  this.pc=pc;
+    }
 }

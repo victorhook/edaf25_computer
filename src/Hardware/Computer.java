@@ -1,5 +1,6 @@
 package Hardware;
 
+import Software.Instruction;
 import Software.Program;
 
 public class Computer {
@@ -14,7 +15,6 @@ public class Computer {
 	
 	public void load(Program program){
 		this.program = program;
-		program.setContext(memory);
 	}
 	
 	public void run(){

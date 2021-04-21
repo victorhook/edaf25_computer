@@ -2,7 +2,7 @@ package Hardware;
 
 public interface Operand {
 
-	public int Value();
+	public Integer Value();
 	
 	public String print();
 }

@@ -4,14 +4,19 @@ public class ProgramCounter {
 	 private long pc;
 
 	    public ProgramCounter() {
-	        pc++;
-
+	        pc = 0;
 	    }
-	    public long getPc() {
+
+	    public long get() {
 	        return pc;
+	    }
 
+	    public void set(long pc) {
+	        this.pc = pc;
 	    }
-	    public void setPc(long pc) {
-	        this.pc=pc;
-	    }
+
+	    public void inc() {
+	    	pc++;
+		}
+
 }

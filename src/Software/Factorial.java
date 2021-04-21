@@ -16,4 +16,5 @@ public class Factorial extends Program {
         add(new Print(fac));
         add(new Halt());
     }
+
 }

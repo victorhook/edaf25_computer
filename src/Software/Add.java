@@ -9,7 +9,7 @@ public class Add extends Arithmetic {
     }
 
     @Override
-    protected int compute(int op1, int op2) {
+    protected long compute(long op1, long op2) {
         return op1 + op2;
     }
 }

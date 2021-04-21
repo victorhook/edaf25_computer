@@ -15,10 +15,10 @@ public abstract class Arithmetic implements Instruction {
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        int result = compute(op1.value(), op2.value());
+        long result = compute(op1.value(), op2.value());
         memory.write(addr.value(), result);
     }
 
-    protected abstract int compute(long op1, long op2);
+    protected abstract long compute(long op1, long op2);
 
 }

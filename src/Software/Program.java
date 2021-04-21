@@ -12,12 +12,12 @@ public class Program extends ArrayList<Instruction> {
 		while(computer.getPc() != -1) {
 			Instruction instruction = get((int) computer.getPc());
 
-
-
-			System.out.printf("[%s] - %s\n", computer.getPc(), instruction);
 			try {
 				Thread.sleep(800);
 			} catch (Exception e) {}
+
+			System.out.printf("[%s] - %s  ", computer.getPc(), instruction);
+			System.out.printf("n: %s, fac: %s\n", memory.read(0), memory.read(1));
 
 			instruction.execute(computer, memory);
 			if (!(instruction instanceof Jump || instruction instanceof JumpEq)) {

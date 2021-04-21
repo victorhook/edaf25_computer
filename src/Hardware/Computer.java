@@ -16,20 +16,20 @@ public class Computer {
 	public void load(Program program){
 		this.program = program;
 	}
-	
+
 	public void run(){
 		program.execute(this, memory);
 	}
 
 	public long getPc() {
-        return pc.getPc();
+        return pc.get();
     }
 
     public void incPc() {
-		setPc(getPc() + 1);
+		pc.inc();
 	}
 
     public void setPc(long pc) {
-        this.pc.setPc(pc);
+        this.pc.set(pc);
     }
 }

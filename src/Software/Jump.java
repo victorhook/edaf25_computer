@@ -19,7 +19,7 @@ public class Jump implements Instruction {
 
     @Override
     public String toString() {
-        return String.format("JPM %s", addr);
+        return String.format("JMP %s", addr);
     }
 
 }

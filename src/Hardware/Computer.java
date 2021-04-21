@@ -20,13 +20,14 @@ public class Computer {
 	public void run(){
 		while(ProgramCounter.getPC() >= 0){
 			program.executeLine(pc);
+			pc++;
 		}
 	}
 	public Integer getPc() {
         return pc;
 
     }
-    public Integer setPc(int pc) {
-        return  this.pc=pc;
+    public Integer setPc(long pc) {
+        return  this.pc.setPc(pc);
     }
 }

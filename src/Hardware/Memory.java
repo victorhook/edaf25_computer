@@ -2,27 +2,20 @@ package Hardware;
 
 public abstract class Memory {
 
-    protected Address[] mem;
+    protected Operand[] mem;
 
     public Memory(int size) {
-        this.mem = new Address[size];
+        this.mem = new Operand[size];
     }
 
-    public int read(int addr) {
-        return mem[addr].value();
+    public long read(long addr) {
+        return mem[(int) addr].value();
     }
 
-    public void write(int addr, Word value) {
-        mem[addr] = getWord(value);
+    public void write(long addr, long value) {
+        mem[(int) addr] = getWord(value);
     }
-    
-    public Word get(int index){
-		if(index > memory.size || index < 0){
-			return null;
-		}else{
-			return memory[index];
-		}
 
-    protected abstract Word getWord(Word word);
+    protected abstract Word getWord(long word);
 
 }

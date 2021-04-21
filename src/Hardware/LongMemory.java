@@ -6,7 +6,7 @@ public class LongMemory extends Memory {
         super(size);
     }
 
-    protected Word getWord(Word word) {
-        return new LongWord(word.value());
+    protected Word getWord(long word) {
+        return new LongWord(word);
     }
 }

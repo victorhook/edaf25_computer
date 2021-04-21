@@ -1,18 +1,16 @@
 package Hardware;
 
-public abstract class Word implements Operand {
+public abstract class Word extends Operand {
 
-    @Override
-    public Integer Value() {
-        return null;
+    public Word(long value) {
+        super(value);
     }
 
     @Override
-    public String print() {
+    public String printable() {
         return String.valueOf(getSize());
     }
 
     protected abstract int getSize();
-
 
 }

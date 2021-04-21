@@ -1,8 +1,21 @@
 package Hardware;
 
-public interface Operand {
+public abstract class Operand {
 
-	public Integer Value();
-	public Word getWord(Memory context);
-	public String print();
+	private long value;
+
+	public Operand(long value) {
+		this.value = value;
+	}
+
+	public long value() {
+		return value;
+	}
+
+	public void print() {
+		System.out.println(printable());
+	}
+
+	protected abstract String printable();
+
 }

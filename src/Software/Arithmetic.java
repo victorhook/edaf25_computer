@@ -19,6 +19,6 @@ public abstract class Arithmetic implements Instruction {
         memory.write(addr.value(), result);
     }
 
-    protected abstract int compute(int op1, int op2);
+    protected abstract int compute(long op1, long op2);
 
 }

@@ -7,6 +7,6 @@ public class Halt implements Instruction {
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        computer.setPC(-1);
+        computer.setPc(-1);
     }
 }

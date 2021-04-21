@@ -1,20 +1,15 @@
 package Hardware;
 
-public class Address {
-private int addr;
-	
-	public Address(int addr){
-		this.addr = addr;
-		
+public class Address extends Operand {
+
+	public Address(long value) {
+		super(value);
 	}
 
 	@Override
-	public Integer value() {
-		return
+	public String printable() {
+		return "[" + value() + "]";
 	}
-	@Override
-	public String print() {
-		return "[" + addr + "]";
-	}
+
 }
 

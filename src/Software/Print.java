@@ -4,16 +4,15 @@ import Hardware.Computer;
 import Hardware.Memory;
 import Hardware.Operand;
 
-public class Jump implements Instruction {
+public class Print implements Instruction {
+    private Operand op;
 
-    private Operand addr;
-
-    public Jump(Operand addr) {
-        this.addr = addr;
+    public Print(Operand op) {
+        this.op = op;
     }
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        computer.setPc(addr.value());
+        System.out.println(op.value());
     }
 }

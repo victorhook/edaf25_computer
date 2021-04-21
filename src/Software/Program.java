@@ -1,18 +1,17 @@
 package Software;
 
-public class Program {
-	import Software.Instruction;
-	import java.util.ArrayList;
+import Hardware.Computer;
+import Hardware.Memory;
 
-	public class Program extends ArrayList<Instruction> {
-	    ProgramCounter pc= new ProgramCounter();
+import java.util.ArrayList;
 
-	    public void execute(Memory memory) {
-	        
-	        while(pc.getPc()!=-1) {
-	        get(pc.getPc()).execute(memory);
-	    }
+public class Program extends ArrayList<Instruction> {
 
-	    }
+	public void execute(Computer computer, Memory memory) {
+		while(computer.getPc() != -1) {
+			get((int) computer.getPc()).execute(computer, memory);
+			computer.setPc(computer.getPc() + 1);
+		}
+
 	}
 }

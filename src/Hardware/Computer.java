@@ -18,16 +18,18 @@ public class Computer {
 	}
 	
 	public void run(){
-		while(ProgramCounter.getPC() >= 0){
-			program.executeLine(pc);
-			pc++;
-		}
+		program.execute(this, memory);
 	}
-	public Integer getPc() {
-        return pc;
 
+	public long getPc() {
+        return pc.getPc();
     }
-    public Integer setPc(long pc) {
-        return  this.pc.setPc(pc);
+
+    public void incPc() {
+		setPc(getPc() + 1);
+	}
+
+    public void setPc(long pc) {
+        this.pc.setPc(pc);
     }
 }

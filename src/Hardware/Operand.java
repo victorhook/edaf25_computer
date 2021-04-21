@@ -1,4 +1,8 @@
 package Hardware;
 
-public class Operand {
+public interface Operand {
+
+	public int Value();
+	
+	public String prt();
 }

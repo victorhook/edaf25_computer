@@ -9,6 +9,11 @@ public class Mul extends Arithmetic {
     }
 
     @Override
+    protected String getSymbols() {
+        return "MUL";
+    }
+
+    @Override
     protected long compute(long op1, long op2) {
         return op1 * op2;
     }

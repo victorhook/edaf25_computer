@@ -17,4 +17,9 @@ public class Copy implements Instruction {
     public void execute(Computer computer, Memory memory) {
         memory.write(to.value(), from.value());
     }
+
+    @Override
+    public String toString() {
+        return String.format("CPY %s %s", from.printable(), to.printable());
+    }
 }

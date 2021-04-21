@@ -16,6 +16,6 @@ public abstract class Operand {
 		System.out.println(printable());
 	}
 
-	protected abstract String printable();
+	public abstract String printable();
 
 }

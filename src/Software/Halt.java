@@ -9,4 +9,9 @@ public class Halt implements Instruction {
     public void execute(Computer computer, Memory memory) {
         computer.setPc(-1);
     }
+
+    public String toString() {
+        return "HLT";
+    }
+
 }

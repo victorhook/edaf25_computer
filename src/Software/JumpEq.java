@@ -21,4 +21,10 @@ public class JumpEq implements Instruction {
             computer.setPc(addr.value());
         }
     }
+
+    @Override
+    public String toString() {
+        return String.format("JEQ %s %s %s", eq, addr.printable(), comparer.printable());
+    }
+
 }

@@ -8,9 +8,8 @@ public abstract class Word extends Operand {
 
     @Override
     public String printable() {
-        return String.valueOf(getSize());
+        return String.valueOf(value());
     }
-
     protected abstract int getSize();
 
 }

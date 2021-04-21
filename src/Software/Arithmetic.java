@@ -19,6 +19,12 @@ public abstract class Arithmetic implements Instruction {
         memory.write(addr.value(), result);
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s %s %s %s", getSymbols(), op1.printable(), op2.printable(), addr.printable());
+    }
+
+    protected abstract String getSymbols();
     protected abstract long compute(long op1, long op2);
 
 }

@@ -16,4 +16,10 @@ public class Jump implements Instruction {
     public void execute(Computer computer, Memory memory) {
         computer.setPc(addr);
     }
+
+    @Override
+    public String toString() {
+        return String.format("JPM %s", addr);
+    }
+
 }

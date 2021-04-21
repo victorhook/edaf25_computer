@@ -16,4 +16,10 @@ public class Print implements Instruction {
     public void execute(Computer computer, Memory memory) {
         System.out.println(op.value());
     }
+
+    @Override
+    public String toString() {
+        return String.format("PRT %s", op.printable());
+    }
+
 }

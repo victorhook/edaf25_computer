@@ -1,11 +1,12 @@
 package Software;
 
+import Hardware.Address;
 import Hardware.Computer;
 import Hardware.Memory;
 import Hardware.Operand;
 
 public class Print implements Instruction {
-    private Operand op;
+    private Address op;
 
     public Print(Operand op) {
         this.op = op;

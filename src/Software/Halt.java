@@ -6,8 +6,9 @@ import Hardware.Memory;
 public class Halt implements Instruction {
 
     @Override
-    public void execute(Computer computer, Memory memory) {
+    public int execute(Computer computer, Memory memory) {
         computer.setPc(-1);
+        return Program.PC_CHANGED;
     }
 
     public String toString() {

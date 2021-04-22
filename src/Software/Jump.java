@@ -2,7 +2,6 @@ package Software;
 
 import Hardware.Computer;
 import Hardware.Memory;
-import Hardware.Operand;
 
 public class Jump implements Instruction {
 
@@ -13,8 +12,9 @@ public class Jump implements Instruction {
     }
 
     @Override
-    public void execute(Computer computer, Memory memory) {
+    public int execute(Computer computer, Memory memory) {
         computer.setPc(addr);
+        return Program.PC_CHANGED;
     }
 
     @Override

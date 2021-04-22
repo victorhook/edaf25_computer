@@ -1,6 +1,5 @@
 package Software;
 
-import Hardware.Address;
 import Hardware.Computer;
 import Hardware.Memory;
 import Hardware.Operand;
@@ -13,8 +12,9 @@ public class Print implements Instruction {
     }
 
     @Override
-    public void execute(Computer computer, Memory memory) {
+    public int execute(Computer computer, Memory memory) {
         System.out.println(op.value(memory));
+        return Program.PC_NOT_CHANGED;
     }
 
     @Override

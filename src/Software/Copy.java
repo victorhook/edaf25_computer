@@ -16,8 +16,9 @@ public class Copy implements Instruction {
     }
 
     @Override
-    public void execute(Computer computer, Memory memory) {
+    public int execute(Computer computer, Memory memory) {
         memory.write(to.getAddr(), from.value(memory));
+        return Program.PC_NOT_CHANGED;
     }
 
     @Override

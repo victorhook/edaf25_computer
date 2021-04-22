@@ -16,17 +16,13 @@ public class JumpEq implements Instruction {
     }
 
     @Override
-    public void execute(Computer computer, Memory memory) {
+    public int execute(Computer computer, Memory memory) {
         int diff = comp1.value(memory).compareTo(comp2.value(memory));
 
-        System.out.printf("Comparing %s with %s, addr: %s\n", comp1.value(memory), comp2.value(memory), addr);
-
-        if (diff == 0) {
+        if (diff == 0)
             computer.setPc(addr);
-        } else {
-            computer.incPc();
-        }
 
+        return diff == 0 ? Program.PC_CHANGED : Program.PC_NOT_CHANGED;
     }
 
     @Override

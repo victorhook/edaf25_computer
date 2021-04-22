@@ -18,9 +18,10 @@ public abstract class Arithmetic implements Instruction {
     }
 
     @Override
-    public void execute(Computer computer, Memory memory) {
+    public int execute(Computer computer, Memory memory) {
         BigInteger result = compute(op1.value(memory), op2.value(memory));
         memory.write(addr.getAddr(), result);
+        return Program.PC_NOT_CHANGED;
     }
 
     @Override

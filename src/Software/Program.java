@@ -13,6 +13,7 @@ public class Program extends ArrayList<Instruction> {
 			Instruction instruction = get((int) computer.getPc());
 
 			try {
+				
 				//Thread.sleep(800);
 			} catch (Exception e) {}
 

@@ -2,7 +2,7 @@ package Hardware;
 
 public class LongMemory extends Memory<Long> {
 
-    protected LongMemory(int size) {
+    public LongMemory(int size) {
         super(size);
     }
 }

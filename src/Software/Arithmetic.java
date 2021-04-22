@@ -4,6 +4,8 @@ import Hardware.Computer;
 import Hardware.Memory;
 import Hardware.Operand;
 
+import java.math.BigInteger;
+
 public abstract class Arithmetic implements Instruction {
     private Operand op1, op2, addr;
 
@@ -15,8 +17,9 @@ public abstract class Arithmetic implements Instruction {
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        long result = compute(op1.value(), op2.value());
-        memory.write(addr.value(), result);
+        BigInteger result = compute(op1.value(memory), op2.value(memory));
+        int address = addr.value(memory).intValue();
+        memory.write(address, result);
     }
 
     @Override
@@ -25,6 +28,6 @@ public abstract class Arithmetic implements Instruction {
     }
 
     protected abstract String getSymbols();
-    protected abstract long compute(long op1, long op2);
+    protected abstract BigInteger compute(BigInteger op1, BigInteger op2);
 
 }

@@ -17,8 +17,8 @@ public class JumpEq implements Instruction {
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        if (comparer.value() == eq) {
-            computer.setPc(addr.value());
+        if (comparer.value(memory).intValue() == eq) {
+            computer.setPc(addr.value(memory).intValue());
         } else {
             computer.incPc();
         }

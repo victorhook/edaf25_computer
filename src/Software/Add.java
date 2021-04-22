@@ -2,6 +2,8 @@ package Software;
 
 import Hardware.Operand;
 
+import java.math.BigInteger;
+
 public class Add extends Arithmetic {
 
     public Add(Operand op1, Operand op2, Operand addr) {
@@ -14,7 +16,7 @@ public class Add extends Arithmetic {
     }
 
     @Override
-    protected long compute(long op1, long op2) {
-        return op1 + op2;
+    protected BigInteger compute(BigInteger op1, BigInteger op2) {
+        return op1.add(op2);
     }
 }

@@ -1,18 +1,10 @@
 package Hardware;
 
-public abstract class Memory<T> {
+import java.math.BigInteger;
 
-    protected T mem[];
+public abstract class Memory {
 
-    protected Memory(int size) {
-        mem = (T []) new Object[size];
-    }
-
-    public T read(int addr) {
-        return mem[addr];
-    }
-    public void write(int addr, T value) {
-        mem[addr] = value;
-    }
+    public abstract BigInteger read(int addr);
+    public abstract void write(int addr, BigInteger value);
 
 }

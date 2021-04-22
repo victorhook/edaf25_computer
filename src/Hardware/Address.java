@@ -1,15 +1,22 @@
 package Hardware;
 
+import java.math.BigInteger;
+
 public class Address extends Operand {
 
-	public Address(long value) {
-		super(value);
+	private int addr;
+
+	public Address(int value) {
+		addr = value;
+	}
+
+	public BigInteger read(Memory memory) {
+		return memory.read(addr);
 	}
 
 	@Override
 	public String printable() {
-		return "[" + value() + "]";
+		return String.format("[%s]", addr);
 	}
-
 }
 

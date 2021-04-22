@@ -1,19 +1,15 @@
 package Hardware;
 
+import java.math.BigInteger;
+
 public abstract class Operand {
 
-	private long value;
-
-	public Operand(long value) {
-		this.value = value;
-	}
-
-	public long value() {
-		return value;
-	}
-
-	public void print() {
-		System.out.println(printable());
+	public BigInteger value(Memory memory) {
+		if (this instanceof Address) {
+			return ((Address) this).read(memory);
+		} else {
+			return ((Word) this).getValue();
+		}
 	}
 
 	public abstract String printable();

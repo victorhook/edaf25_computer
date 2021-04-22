@@ -14,7 +14,7 @@ public class Print implements Instruction {
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        System.out.println(op.value());
+        System.out.println(op.value(memory));
     }
 
     @Override

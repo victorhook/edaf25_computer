@@ -1,15 +1,16 @@
 package Hardware;
 
-public abstract class Word extends Operand {
+import java.math.BigInteger;
 
-    public Word(long value) {
-        super(value);
-    }
+public abstract class Word extends Operand {
 
     @Override
     public String printable() {
-        return String.valueOf(value());
+        return getValue().toString();
     }
+
+    public abstract BigInteger getValue();
+
     protected abstract int getSize();
 
 }

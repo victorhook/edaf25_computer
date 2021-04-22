@@ -1,9 +1,18 @@
 package Hardware;
 
+import java.math.BigInteger;
+
 public class LongWord extends Word {
 
+    private long value;
+
     public LongWord(long value) {
-        super(value);
+        this.value = value;
+    }
+
+    @Override
+    public BigInteger getValue() {
+        return new BigInteger(String.valueOf(value));
     }
 
     @Override

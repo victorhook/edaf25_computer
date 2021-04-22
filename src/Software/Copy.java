@@ -1,22 +1,23 @@
 package Software;
 
+import Hardware.Address;
 import Hardware.Computer;
 import Hardware.Memory;
 import Hardware.Operand;
 
 public class Copy implements Instruction {
 
-    private Operand from, to;
+    private Operand from;
+    private Address to;
 
-    public Copy(Operand from, Operand to) {
+    public Copy(Operand from, Address to) {
         this.from = from;
         this.to = to;
     }
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        int address = to.value(memory).intValue();
-        memory.write(address, from.value(memory));
+        memory.write(to.getAddr(), from.value(memory));
     }
 
     @Override

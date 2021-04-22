@@ -10,6 +10,10 @@ public class Address extends Operand {
 		addr = value;
 	}
 
+	public int getAddr() {
+		return addr;
+	}
+
 	public BigInteger read(Memory memory) {
 		return memory.read(addr);
 	}

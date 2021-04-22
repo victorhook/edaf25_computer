@@ -6,19 +6,23 @@ import Hardware.Operand;
 
 public class JumpEq implements Instruction {
 
-    private int eq;
-    private Operand addr, comparer;
+    private int addr;
+    private Operand comp1, comp2;
 
-    public JumpEq(int eq, Operand comparer, Operand addr) {
-        this.eq = eq;
-        this.comparer = comparer;
+    public JumpEq(int addr, Operand comp1, Operand comp2) {
         this.addr = addr;
+        this.comp1 = comp1;
+        this.comp2 = comp2;
     }
 
     @Override
     public void execute(Computer computer, Memory memory) {
-        if (comparer.value(memory).intValue() == eq) {
-            computer.setPc(addr.value(memory).intValue());
+        int diff = comp1.value(memory).compareTo(comp2.value(memory));
+
+        System.out.printf("Comparing %s with %s, addr: %s\n", comp1.value(memory), comp2.value(memory), addr);
+
+        if (diff == 0) {
+            computer.setPc(addr);
         } else {
             computer.incPc();
         }
@@ -27,7 +31,7 @@ public class JumpEq implements Instruction {
 
     @Override
     public String toString() {
-        return String.format("JEQ %s %s %s", eq, addr.printable(), comparer.printable());
+        return String.format("JEQ %s %s %s", addr, comp1.printable(), comp2.printable());
     }
 
 }

@@ -1,5 +1,6 @@
 package Software;
 
+import Hardware.Address;
 import Hardware.Computer;
 import Hardware.Memory;
 import Hardware.Operand;
@@ -7,9 +8,10 @@ import Hardware.Operand;
 import java.math.BigInteger;
 
 public abstract class Arithmetic implements Instruction {
-    private Operand op1, op2, addr;
+    private Operand op1, op2;
+    private Address addr;
 
-    public Arithmetic(Operand op1, Operand op2, Operand addr) {
+    public Arithmetic(Operand op1, Operand op2, Address addr) {
         this.op1 = op1;
         this.op2 = op2;
         this.addr = addr;
@@ -18,8 +20,7 @@ public abstract class Arithmetic implements Instruction {
     @Override
     public void execute(Computer computer, Memory memory) {
         BigInteger result = compute(op1.value(memory), op2.value(memory));
-        int address = addr.value(memory).intValue();
-        memory.write(address, result);
+        memory.write(addr.getAddr(), result);
     }
 
     @Override

@@ -11,6 +11,7 @@ public class Halt implements Instruction {
         return Program.PC_CHANGED;
     }
 
+    @Override
     public String toString() {
         return "HLT";
     }

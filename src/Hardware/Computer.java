@@ -1,6 +1,5 @@
 package Hardware;
 
-import Software.Instruction;
 import Software.Program;
 
 public class Computer {
@@ -21,7 +20,7 @@ public class Computer {
 		program.execute(this, memory);
 	}
 
-	public long getPc() {
+	public int getPc() {
         return pc.get();
     }
 
@@ -29,7 +28,7 @@ public class Computer {
 		pc.inc();
 	}
 
-    public void setPc(long pc) {
+    public void setPc(int pc) {
         this.pc.set(pc);
     }
 }

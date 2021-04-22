@@ -1,22 +1,23 @@
 package Hardware;
 
 public class ProgramCounter {
-	 private long pc;
 
-	    public ProgramCounter() {
-	        pc = 0;
-	    }
+	private int pc;
 
-	    public long get() {
-	        return pc;
-	    }
+	public ProgramCounter() {
+		pc = 0;
+	}
 
-	    public void set(long pc) {
-	        this.pc = pc;
-	    }
+	public int get() {
+		return pc;
+	}
 
-	    public void inc() {
-	    	pc++;
+	public void set(int pc) {
+		this.pc = pc;
+	}
+
+	public void inc() {
+		pc++;
 		}
 
 }

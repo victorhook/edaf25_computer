@@ -5,6 +5,7 @@ import Hardware.Memory;
 import Hardware.Operand;
 
 public class Print implements Instruction {
+
     private Operand op;
 
     public Print(Operand op) {

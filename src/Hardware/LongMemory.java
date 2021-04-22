@@ -1,12 +1,8 @@
 package Hardware;
 
-public class LongMemory extends Memory {
+public class LongMemory extends Memory<Long> {
 
-    public LongMemory(int size) {
+    protected LongMemory(int size) {
         super(size);
-    }
-
-    protected Word getWord(long word) {
-        return new LongWord(word);
     }
 }

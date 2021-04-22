@@ -1,22 +1,18 @@
 package Hardware;
 
-public abstract class Memory {
+public abstract class Memory<T> {
 
-    protected Operand[] mem;
+    protected T mem[];
 
-    public Memory(int size) {
-        this.mem = new Operand[size];
+    protected Memory(int size) {
+        mem = (T []) new Object[size];
     }
 
-    public long read(long addr) {
-        Operand value = mem[(int) addr];
-        return value == null ? 0 : value.value();
+    public T read(int addr) {
+        return mem[addr];
     }
-
-    public void write(long addr, long value) {
-        mem[(int) addr] = getWord(value);
+    public void write(int addr, T value) {
+        mem[addr] = value;
     }
-
-    protected abstract Word getWord(long word);
 
 }
